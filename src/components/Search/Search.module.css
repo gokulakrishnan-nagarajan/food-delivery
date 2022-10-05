@@ -1,0 +1,17 @@
+.container {
+  padding: 8px;
+  border: 1px solid #89929a;
+  border-radius: 5px;
+}
+
+.search-icon {
+  color: #89929a;
+}
+
+.search-input {
+  background-color: transparent;
+  border: none;
+}
+.search-input:focus {
+  outline: none;
+}
