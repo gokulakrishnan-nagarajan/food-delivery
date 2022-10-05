@@ -1,58 +1,27 @@
-import React, { useCallback, useMemo } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useMemo } from "react";
+import { useSelector } from "react-redux";
 
-import {
-  getSelectedCategory,
-  setCategory,
-} from "../../store/slices/filters.slice";
 import { getCategories } from "../../store/slices/food.slice";
+import CategoryItem from "../CategoryItem/CategoryItem";
 
 import styles from "./Categories.module.css";
 
 function Categories() {
-  const dispatch = useDispatch();
-
   const categories = useSelector(getCategories);
-  const selectedCategory = useSelector(getSelectedCategory);
-
-  const onCategoryClick = useCallback(
-    (event) => {
-      const selectedCategory = event.target.getAttribute("data-id");
-
-      dispatch(setCategory(selectedCategory));
-    },
-    [dispatch]
-  );
 
   const categoriesList = useMemo(() => {
-    return (
-      Array.isArray(categories) &&
-      categories.map((category) => (
-        <div
-          key={category.id}
-          className={`${styles.category} ${
-            category.id === selectedCategory ? styles.selected : ""
-          }`}
-          data-id={category.id}
-          onClick={onCategoryClick}
-        >
-          {category.name}
-        </div>
-      ))
-    );
-  }, [categories, selectedCategory, onCategoryClick]);
+    if (!Array.isArray(categories)) {
+      return null;
+    }
+
+    return categories.map((category) => (
+      <CategoryItem key={category.id} category={category} />
+    ));
+  }, [categories]);
 
   return (
     <div className={`${styles.container} flex-align-center`}>
-      <div
-        className={`${styles.category} ${
-          selectedCategory === "all" ? styles.selected : ""
-        }`}
-        data-id="all"
-        onClick={onCategoryClick}
-      >
-        All
-      </div>
+      <CategoryItem category={{ id: "all", name: "All" }} />
       {categoriesList}
     </div>
   );

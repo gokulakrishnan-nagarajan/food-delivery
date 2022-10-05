@@ -1,0 +1,12 @@
+.category {
+  padding: 8px 16px;
+  color: #ffc700;
+  border-width: 0px 0.5px;
+  border-style: solid;
+  border-color: #ffc700;
+  cursor: pointer;
+}
+.category.selected {
+  color: #fff;
+  background-color: #ffc700;
+}
