@@ -1,24 +1,24 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { toast } from "react-toastify";
+
+import axiosInstance from "../../config/axios";
 import { GET_CATEGORIES, GET_FOOD_ITEMS } from "../../config/endpoints";
 
 export const fetchCategories = createAsyncThunk(
   "food/fetchCategories",
   async () => {
-    const response = await fetch(GET_CATEGORIES);
-    const categories = await response.json();
+    const response = await axiosInstance(GET_CATEGORIES);
 
-    return categories;
+    return response.data;
   }
 );
 
 export const fetchFoodItems = createAsyncThunk(
   "food/fetchFoodItems",
   async () => {
-    const response = await fetch(GET_FOOD_ITEMS);
-    const foodItems = await response.json();
+    const response = await axiosInstance(GET_FOOD_ITEMS);
 
-    return foodItems;
+    return response.data;
   }
 );
 
