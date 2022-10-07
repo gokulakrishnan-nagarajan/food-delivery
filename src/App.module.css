@@ -1,0 +1,11 @@
+.container {
+  height: 100vh;
+  background-color: #f7f8fa;
+}
+
+.header {
+  padding: 16px 38px;
+  color: #fff;
+  font-size: 40px;
+  background-color: #ffc700;
+}

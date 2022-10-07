@@ -1,0 +1,14 @@
+.content {
+  width: 1000px;
+  min-height: 0px;
+  margin: 0 auto;
+}
+
+.actions-container {
+  width: 100%;
+  padding: 28px 0px;
+}
+
+.food-items-list-container {
+  min-height: 0px;
+}
