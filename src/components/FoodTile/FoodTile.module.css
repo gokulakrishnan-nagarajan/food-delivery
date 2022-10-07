@@ -1,0 +1,55 @@
+.wrapper {
+  padding: 20px;
+}
+
+.tile {
+  position: relative;
+  width: 200px;
+  height: 270px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0px 0px 4px 0px #ccc;
+  overflow: hidden;
+}
+
+.promotion {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 40px;
+  height: 24px;
+  color: #fff;
+  font-size: 12px;
+}
+.promotion.discount {
+  background-color: #ff686f;
+}
+.promotion.one-plus-one {
+  background-color: #8f64ff;
+}
+.promotion.gift {
+  background-color: #02b1ff;
+}
+
+.food-img {
+  width: 200px;
+  height: 200px;
+}
+
+.details-container {
+  padding: 12px;
+}
+
+.food-item-name {
+  color: #666;
+  font-weight: bold;
+}
+
+.rating-icon {
+  margin-right: 4px;
+  font-size: 8px;
+}
+
+.new {
+  color: #15b884;
+}

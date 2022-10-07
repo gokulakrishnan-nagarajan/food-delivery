@@ -45,11 +45,6 @@ code {
   flex-direction: column;
 }
 
-.flex-grow-1 {
-  display: flex;
-  flex-grow: 1;
-}
-
 .flex-align-center {
   display: flex;
   align-items: center;
@@ -63,4 +58,8 @@ code {
 .flex-justify-center {
   display: flex;
   justify-content: center;
+}
+
+.flex-grow-1 {
+  flex-grow: 1;
 }
