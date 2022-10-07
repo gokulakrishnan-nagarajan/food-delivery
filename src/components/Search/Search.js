@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, { useMemo, useState } from "react";
 import { useDispatch } from "react-redux";
 import { throttle } from "lodash";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -16,12 +16,11 @@ function Search() {
     store.getState().filters.searchText
   );
 
-  const dispatchSearchText = useCallback(
-    throttle((value) => {
+  const dispatchSearchText = useMemo(() => {
+    return throttle((value) => {
       dispatch(setSearchText(value));
-    }, 1000),
-    [dispatch]
-  );
+    }, 1000);
+  }, [dispatch]);
 
   const onSearchTextChange = (event) => {
     const newSearchText = event.target.value;
