@@ -24,11 +24,11 @@ function Pagination(props) {
   }, [items]);
 
   useEffect(() => {
-    const tempStartIndex = (currentPage - 1) * pageSize;
-    const tempEndIndex = currentPage * pageSize - 1;
+    const newStartIndex = (currentPage - 1) * pageSize;
+    const newEndIndex = currentPage * pageSize - 1;
 
-    setStartIndex(tempStartIndex);
-    setEndIndex(tempEndIndex < items.length ? tempEndIndex : items.length - 1);
+    setStartIndex(newStartIndex);
+    setEndIndex(newEndIndex < items.length ? newEndIndex : items.length - 1);
   }, [currentPage, pageSize, items.length]);
 
   const totalNumberOfPages = useMemo(() => {
