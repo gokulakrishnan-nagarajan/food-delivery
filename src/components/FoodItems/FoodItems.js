@@ -6,9 +6,9 @@ import {
   getSearchText,
   getSelectedCategory,
 } from "../../store/slices/filters.slice";
-
 import FoodTile from "../FoodTile/FoodTile";
 import Pagination from "../Pagination/Pagination";
+import { NUMBER_OF_ITEMS_PER_PAGE } from "../../helpers/constants";
 
 function FoodItems() {
   const foodItems = useSelector(getFoodItems);
@@ -33,7 +33,9 @@ function FoodItems() {
     ));
   }, [filteredFoodItems]);
 
-  return <Pagination items={foodItemsList} pageSize={24} />;
+  return (
+    <Pagination items={foodItemsList} pageSize={NUMBER_OF_ITEMS_PER_PAGE} />
+  );
 }
 
 export default FoodItems;
