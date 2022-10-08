@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 
 import { getCategories } from "../../store/slices/food.slice";
 import CategoryItem from "../CategoryItem/CategoryItem";
+import { MAX_CATEGORY_LIST_LENGTH } from "../../helpers/constants";
 
 import styles from "./CategoryList.module.css";
 
@@ -16,7 +17,7 @@ function CategoryList() {
   }, [categories]);
 
   const shouldBeHidden = useMemo(() => {
-    return categories.length > 5;
+    return categories.length > MAX_CATEGORY_LIST_LENGTH;
   }, [categories.length]);
 
   return (

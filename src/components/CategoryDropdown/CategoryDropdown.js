@@ -6,6 +6,7 @@ import {
   getSelectedCategory,
   setCategory,
 } from "../../store/slices/filters.slice";
+import { MAX_CATEGORY_LIST_LENGTH } from "../../helpers/constants";
 
 import styles from "./CategoryDropdown.module.css";
 
@@ -24,7 +25,7 @@ function CategoryDropdown() {
   }, [categories]);
 
   const shouldBeHidden = useMemo(() => {
-    return categories.length <= 5;
+    return categories.length <= MAX_CATEGORY_LIST_LENGTH;
   }, [categories.length]);
 
   const onCategoryChange = (event) => {

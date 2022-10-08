@@ -6,6 +6,7 @@ import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 import { setSearchText } from "../../store/slices/filters.slice";
 import { store } from "../../store/store";
+import { INPUT_THROTTLE_DURATION } from "../../helpers/constants";
 
 import styles from "./Search.module.css";
 
@@ -19,7 +20,7 @@ function Search() {
   const dispatchSearchText = useMemo(() => {
     return throttle((value) => {
       dispatch(setSearchText(value));
-    }, 1000);
+    }, INPUT_THROTTLE_DURATION);
   }, [dispatch]);
 
   const onSearchTextChange = (event) => {

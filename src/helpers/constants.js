@@ -1,1 +1,3 @@
+export const MAX_CATEGORY_LIST_LENGTH = 5;
+export const INPUT_THROTTLE_DURATION = 1000;
 export const DISPLAYED_PAGE_NUMBERS_COUNT = 5;
