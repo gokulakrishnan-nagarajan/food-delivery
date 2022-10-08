@@ -1,0 +1,17 @@
+.dropdown {
+  padding: 8px;
+  color: #ffc700;
+  font-size: 16px;
+  background-color: transparent;
+  border: 1px solid #ffc700;
+  border-radius: 5px;
+}
+.dropdown.hidden {
+  display: none;
+}
+
+@media screen and (max-width: 960px) {
+  .dropdown {
+    display: block !important;
+  }
+}

@@ -29,6 +29,7 @@ function CategoryItem(props) {
       className={`${styles.category} ${
         category.id === selectedCategory ? styles.selected : ""
       }`}
+      title={category.name}
       data-id={category.id}
       onClick={onCategoryClick}
     >

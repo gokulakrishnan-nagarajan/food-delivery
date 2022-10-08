@@ -9,9 +9,7 @@ import styles from "./LandingPage.module.css";
 function LandingPage() {
   return (
     <div className={`${styles.content} flex-column flex-grow-1`}>
-      <div
-        className={`${styles["actions-container"]} flex-row flex-align-center flex-justify-space-between`}
-      >
+      <div className={`${styles["actions-container"]}`}>
         <Categories />
         <Search />
       </div>

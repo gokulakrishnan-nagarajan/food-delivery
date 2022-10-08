@@ -91,29 +91,31 @@ function Pagination(props) {
         {pageItems}
       </div>
       <div
-        className={`${styles["actions-container"]} flex-align-center flex-justify-center`}
+        className={`${styles["actions-container"]} flex-column flex-align-center`}
       >
-        <FontAwesomeIcon
-          className={`${styles["action-icon"]}`}
-          icon={faAngleDoubleLeft}
-          onClick={onGotoStartClick}
-        />
-        <FontAwesomeIcon
-          className={`${styles["action-icon"]}`}
-          icon={faAngleLeft}
-          onClick={onPrevClick}
-        />
-        {pageNumberList}
-        <FontAwesomeIcon
-          className={`${styles["action-icon"]}`}
-          icon={faAngleRight}
-          onClick={onNextClick}
-        />
-        <FontAwesomeIcon
-          className={`${styles["action-icon"]}`}
-          icon={faAngleDoubleRight}
-          onClick={onGotoEndClick}
-        />
+        <div className={`flex-align-center flex-justify-center`}>
+          <FontAwesomeIcon
+            className={`${styles["action-icon"]}`}
+            icon={faAngleDoubleLeft}
+            onClick={onGotoStartClick}
+          />
+          <FontAwesomeIcon
+            className={`${styles["action-icon"]}`}
+            icon={faAngleLeft}
+            onClick={onPrevClick}
+          />
+          {pageNumberList}
+          <FontAwesomeIcon
+            className={`${styles["action-icon"]}`}
+            icon={faAngleRight}
+            onClick={onNextClick}
+          />
+          <FontAwesomeIcon
+            className={`${styles["action-icon"]}`}
+            icon={faAngleDoubleRight}
+            onClick={onGotoEndClick}
+          />
+        </div>
         <span className={`${styles["sequence-info"]}`}>
           {startIndex + 1} - {endIndex + 1} of {items.length}
         </span>

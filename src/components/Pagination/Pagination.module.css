@@ -10,7 +10,10 @@
 
 .actions-container {
   position: relative;
-  padding: 32px 0px;
+  padding: 24px 0px;
+}
+.actions-container > * {
+  margin: 8px 0px;
 }
 
 .action-icon,
@@ -35,4 +38,10 @@
   right: 40px;
   color: #666;
   font-size: 14px;
+}
+
+@media screen and (max-width: 800px) {
+  .sequence-info {
+    position: static;
+  }
 }

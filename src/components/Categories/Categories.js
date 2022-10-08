@@ -1,29 +1,14 @@
-import React, { useMemo } from "react";
-import { useSelector } from "react-redux";
+import React from "react";
 
-import { getCategories } from "../../store/slices/food.slice";
-import CategoryItem from "../CategoryItem/CategoryItem";
-
-import styles from "./Categories.module.css";
+import CategoryDropdown from "../CategoryDropdown/CategoryDropdown";
+import CategoryList from "../CategoryList/CategoryList";
 
 function Categories() {
-  const categories = useSelector(getCategories);
-
-  const categoriesList = useMemo(() => {
-    if (!Array.isArray(categories)) {
-      return null;
-    }
-
-    return categories.map((category) => (
-      <CategoryItem key={category.id} category={category} />
-    ));
-  }, [categories]);
-
   return (
-    <div className={`${styles.container} flex-align-center`}>
-      <CategoryItem category={{ id: "all", name: "All" }} />
-      {categoriesList}
-    </div>
+    <>
+      <CategoryList />
+      <CategoryDropdown />
+    </>
   );
 }
 
