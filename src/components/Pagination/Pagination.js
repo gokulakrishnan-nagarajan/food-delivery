@@ -16,6 +16,12 @@ function Pagination(props) {
   }, [items]);
 
   useEffect(() => {
+    if (!items.length) {
+      setStartIndex(-1);
+      setEndIndex(-1);
+      return;
+    }
+
     const newStartIndex = (currentPage - 1) * pageSize;
     const newEndIndex = currentPage * pageSize - 1;
 

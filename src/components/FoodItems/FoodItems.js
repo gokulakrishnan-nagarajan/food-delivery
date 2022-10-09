@@ -18,6 +18,10 @@ function FoodItems() {
   const filteredFoodItems = useMemo(() => {
     const trimmedSearchText = searchText.trim().toLowerCase();
 
+    if (selectedCategory === "all" && trimmedSearchText === "") {
+      return foodItems;
+    }
+
     return foodItems.filter(
       (foodItem) =>
         (selectedCategory === "all" ||

@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import {
@@ -15,14 +15,9 @@ function CategoryItem(props) {
 
   const selectedCategory = useSelector(getSelectedCategory);
 
-  const onCategoryClick = useCallback(
-    (event) => {
-      const selectedCategory = event.target.getAttribute("data-id");
-
-      dispatch(setCategory(selectedCategory));
-    },
-    [dispatch]
-  );
+  const onCategoryClick = () => {
+    dispatch(setCategory(category.id));
+  };
 
   return (
     <div
@@ -30,7 +25,6 @@ function CategoryItem(props) {
         category.id === selectedCategory ? styles.selected : ""
       }`}
       title={category.name}
-      data-id={category.id}
       onClick={onCategoryClick}
     >
       {category.name}
